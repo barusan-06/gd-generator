@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>GDお題ジェネレーター</title>
+</head>
+<body>
+    <p>表示テスト</p>
+
+  <h1>グループディスカッション お題ジェネレーター</h1>
+
+  <div>
+    <label>形式：</label>
+    <select id="type">
+      <option value="選択型">選択型</option>
+      <option value="課題解決型">課題解決型</option>
+      <option value="抽象型">抽象型</option>
+    </select>
+  </div>
+
+  <div>
+    <label>難易度：</label>
+    <select id="level">
+      <option value="易しい">易しい</option>
+      <option value="普通">普通</option>
+      <option value="難しい">難しい</option>
+    </select>
+  </div>
+
+  <div>
+    <label>時間：</label>
+    <select id="time">
+      <option value="20分">20分</option>
+      <option value="30分">30分</option>
+      <option value="40分">40分</option>
+    </select>
+  </div>
+
+  <button id="generate">お題を生成</button>
+
+  <h2>結果</h2>
+  <pre id="result"></pre>
+
+  <script src="script.js"></script>
+</body>
+</html>
