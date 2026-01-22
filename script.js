@@ -1,16 +1,30 @@
-document.getElementById("generate").addEventListener("click", () => {
+document.getElementById("generate").addEventListener("click", async () => {
   const type = document.getElementById("type").value;
   const level = document.getElementById("level").value;
   const time = document.getElementById("time").value;
-
-  const extraPrompt = document.getElementById("extraPrompt").value;
+  const extra = document.getElementById("extraPrompt").value;
 
   const result = document.getElementById("result");
+  result.textContent = "生成中…";
 
-  result.textContent =
-    "形式：" + type + "\n" +
-    "難易度：" + level + "\n" +
-    "時間：" + time + "\n" +
-    "追加条件：" + extraPrompt + "\n\n" +
-    "（ここに後でAIのお題が入ります）";
+  try {
+    const response = await fetch("http://localhost:3000/theme", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        type: type,
+        level: level,
+        time: time,
+        extra: extra
+      })
+    });
+
+    const data = await response.json();
+    result.textContent = "お題：\n" + data.theme;
+
+  } catch (e) {
+    result.textContent = "エラー：" + e;
+  }
 });
