@@ -2,6 +2,8 @@ document.getElementById("generate").addEventListener("click", () => {
     const type = document.getElementById("type").value;
     const level = document.getElementById("level").value;
     const time = document.getElementById("time").value;
+
+    const freeCondition = document.getElementById("freeCondition").value;
   
     const result = document.getElementById("result");
   
@@ -11,4 +13,3 @@ document.getElementById("generate").addEventListener("click", () => {
       "時間：" + time + "\n\n" +
       "（ここに後でAIのお題が入ります）";
   });
-  
