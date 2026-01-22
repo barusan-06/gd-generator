@@ -5,7 +5,6 @@
   <title>GDお題ジェネレーター</title>
 </head>
 <body>
-    <p>表示テスト</p>
 
   <h1>グループディスカッション お題ジェネレーター</h1>
 
@@ -35,6 +34,14 @@
       <option value="40分">40分</option>
     </select>
   </div>
+
+  <div>
+    <label>追加条件（AIへの指示・自由記述）</label><br>
+    <textarea id="extraPrompt" rows="3" cols="50"
+      placeholder="例：ディズニーに関係するテーマで、定量評価しやすいもの"></textarea>
+  </div>
+
+  <br>
 
   <button id="generate">お題を生成</button>
 
