@@ -8,7 +8,7 @@ document.getElementById("generate").addEventListener("click", async () => {
   result.textContent = "生成中…";
 
   try {
-    const response = await fetch("http://localhost:3000/theme", {
+    const response = await fetch("http://https://gd-generator-backend.onrender.com/theme", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
