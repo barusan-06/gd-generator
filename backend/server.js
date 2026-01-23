@@ -26,8 +26,9 @@ app.post("/theme", async (req, res) => {
     const { type, level, time, extra } = req.body;
 
     let prompt = `
-あなたは就職活動のグループディスカッション対策に精通したプロフェッショナルです。
+あなたは日本の就職活動のグループディスカッション対策に精通したプロフェッショナルです。
 以下の条件に基づき、実際の企業選考で出題されるレベルのグループディスカッションのお題を1つ作成してください。
+なお、日本の就活選考で使われる自然で簡潔な日本語表現のみを用いて出力してください。
 
 【条件】
 ・形式：${type}
@@ -82,7 +83,7 @@ app.post("/theme", async (req, res) => {
 ・施策を複数出し、優先順位を決めさせる問いにすること
 `;
     }
-    
+
     const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
