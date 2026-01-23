@@ -97,5 +97,6 @@ app.post("/theme", async (req, res) => {
 // Render対応ポート
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`サーバー起動中：ポート ${PORT}`);
+  console.log(`サーバー起動中：${PORT}`);
 });
+
